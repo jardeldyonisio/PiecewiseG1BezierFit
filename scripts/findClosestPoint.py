@@ -18,15 +18,10 @@ def findClosestPoint(coord, points):
     minDist = np.zeros(npoints)
 
     for i in range(npoints):
-        # print("npoints: ",npoints)
-        # print("index: ",index)
-        # print("i: ",i)
         # compute squared distance between current point and all points in array
         dist = np.sum((coord[i, :] - points) ** 2, axis=1)
 
         # keep index of closest point
         index[i] = np.argmin(dist)
         minDist[i] = np.min(dist)
-    # print("minDist: ",minDist)
-    # print("index: ",index)
     return index, minDist

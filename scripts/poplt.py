@@ -25,6 +25,5 @@ def poplt(x, Q):
     
     # Call to plot the curve, polygon, and data points.
     pop = pltC(C, Q, P)
-    # print("pop: ", pop)
     
     return pop
