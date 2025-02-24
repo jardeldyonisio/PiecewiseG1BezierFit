@@ -1,12 +1,15 @@
 import numpy as np
 
 def fndpts(z, h):
-    # function x = fndpts(z,h). The inputs are a vector z of control
-    # points for a segment of a curve and a step size h. The function
-    # separates the control points into their x and y components and
-    # then uses a de Casteljau or Chaikin scheme to compute new control
-    # points which will produce the same curve. It was written by
-    # E. J. Lane.
+    '''
+    This function separates the control points into their x and y components and
+    then uses a de Casteljau or Chaikin scheme to compute new control points which
+    will produce the same curve.
+
+    @param z: A vector of control points for a segment of a curve.
+    @param h: A step size.
+    @return x: A vector of new control points.
+    '''
     
     # Separates the control points into x and y components
     M = z[:, 0]

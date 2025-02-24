@@ -3,6 +3,19 @@ import ktangdt
 import ctpts
 
 def rmvkt(kt, x, k):
+    '''
+    This function removes a knot from a curve defined by the knot points, the 
+    angles of the unit tangent vectors, and the distances between the knot points.
+
+    @param kt: Index of the knot to be removed.
+    @param x: numpy array of shape (2*(n+1) + 2*(n-1), ), where n is the number of knot points.
+    @param k: Indices of the points in the polyline that will be used to calculate the tangent
+    angles.
+
+    @return xi: The composite vector of parameters for the curve.
+    @return nk: The indices of the points in the polyline that will be used to calculate the
+    tangent angles.
+    '''
     # Separates the components of x
     P, ang, dt = ktangdt(x)
 

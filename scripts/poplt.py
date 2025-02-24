@@ -10,12 +10,10 @@ def poplt(x, Q):
     It calls the function that computes the control points. It then calls for a 
     plot of the curve its polygon, and the data points.
     
-    Parameters:
-    x (array): Vector of curve parameters
-    Q (array): Data points
+    @param x: Vector of curve parameters.
+    @param Q: Data points to be fitted.
     
-    Returns:
-    pop (object): The figure object
+    @return pop: The figure object
     """
     # Separate vector x.
     P, ang, dt = ktangdt(x)
@@ -25,6 +23,5 @@ def poplt(x, Q):
     
     # Call to plot the curve, polygon, and data points.
     pop = pltC(C, Q, P)
-    # print("pop: ", pop)
     
     return pop

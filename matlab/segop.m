@@ -8,18 +8,18 @@ function SOC = segop(k,Q,x0)
 [P,ang,dt] = ktangdt(x0);   % Separates the vector xO
                             % into its subcomponents.
                             
-disp("P");
-disp(P);
-disp("ang");
-disp(ang);
-disp("dt");
-disp(dt);          
-disp("Q");
-disp(Q);               
+% disp("P");
+% disp(P);
+% disp("ang");
+% disp(ang);
+% disp("dt");
+% disp(dt);
+% disp("Q");
+% disp(Q);               
 bdt = bstdst(dt,Q,P,ang,k); % Call to the function which finds
                             % the optimum distances for a segment.
-disp("bdt");
-disp(bdt);                      
+% disp("bdt");
+% disp(bdt);                     
                             
 bdt1 = [];                  % ECR
 

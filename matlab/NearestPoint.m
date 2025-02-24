@@ -4,12 +4,23 @@ function np = NearestPoint(C, P)
 % control points C to point P sing Geom2D toolkit
 
 % Compute complete Bezier
-
-##P e C chegando certo
+% disp("C");
+% disp(C);
+% disp("P");
+% disp(P);
+% asdasdas
+% disp("C");
+% disp(C);
 Q = cubicBezierToPolyline(C, 128);
+% disp("Q");
+% disp(Q);
 % Find nearest point on Bezier
 ind = findClosestPoint(P, Q);
+% disp("ind");
+% disp(ind);
 np  = Q(ind,:);
+% disp("np");
+% disp(np);
 
 % % Test
 % figure;plot(Q(:,1), Q(:,2), 'b.--', C(:,1), C(:,2), 'ks:');

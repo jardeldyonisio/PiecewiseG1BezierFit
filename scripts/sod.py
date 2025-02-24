@@ -2,6 +2,17 @@ import numpy as np
 import NearestPoint
 
 def sod(C, Q, dpkpc):
+    '''
+    This function calculates the sum of the squared distances from the data points to
+    the closest point on the curve.
+
+    @param C: Control points of the cubic Bezier curve.
+    @param Q: Data points to be fitted.
+    @param dpkpc: Position of the knot points passed globally.
+
+    @return sum: The sum of the square of the distances from the data points to the nearest point
+    on the cubic segment.
+    '''
     n = C.shape[0]
     r, s = Q.shape
     y = dpkpc

@@ -4,6 +4,17 @@ import ctpts
 import fndpts
 
 def insrtkt(seg, h, x0, k, Q):
+    '''
+    This function inserts a knot into the curve.
+
+    @param seg: Segment where the knot will be inserted.
+    @param h: Distance between the control points.
+    @param x0: Vector of parameters for the curve.
+    @param k: Knot vector.
+    @param Q: Knot points.
+    @return xi: New vector of parameters for the curve.
+    @return nk: New knot vector.
+    '''
     P, ang, dt = ktangdt(x0) # Separates xO into its subcomponents.
     q = len(k)
     

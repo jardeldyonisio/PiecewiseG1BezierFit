@@ -2,18 +2,21 @@ from cubicBezierToPolyline import cubicBezierToPolyline
 from findClosestPoint import findClosestPoint
 
 def NearestPoint(C, P):
-    # Compute complete Bezier
-    # print("------")
-    # print("C: ", C)
-    # print("P: ", P)
-    Q = cubicBezierToPolyline(C, 128)
-    # print("Q: ", Q.shape) # (128, 2)
+    '''
+    This function finds the nearest point on a Bezier curve to a given point.
 
+    @param C: Control points of the Bezier curve.
+    @param P: Point to find the nearest point to.
+    @return np: The nearest point on the Bezier curve.
+    '''
+    # Compute complete Bezier
+    # print("C: ", C)
+    Q = cubicBezierToPolyline(C, 128)
+    # print("Q: ", Q)
     # Find nearest point on Bezier
     ind = findClosestPoint(P, Q)
     ind = ind[0]
     ind = int(ind[0])
-    # print("ind: ", ind) # Vai até 126, deveria ir até 127
 
     np = Q[ind]
     # print("np: ", np)

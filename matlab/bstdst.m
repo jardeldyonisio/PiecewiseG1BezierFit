@@ -16,14 +16,14 @@ n = length(id); bdt=[];
 for i = 1:n
    bdt(:,i) = fminsearch(@opdist, id(:,i), options,...
        Q(:,k(i):k(i+1)), P(:,i:i+1), ang(i:i+1));
-       disp("id(:,i)");
-       disp(id(:,i));
-       disp("Q(:,k(i):k(i+1))");
-       disp(Q(:,k(i):k(i+1)));
-       disp("P(:,i:i+1)");
-       disp(P(:,i:i+1));
-       disp("ang(i:i+1)");
-       disp(ang(i:i+1));
+       %disp("id(:,i)");
+       %disp(id(:,i));
+       %disp("Q(:,k(i):k(i+1))");
+       %disp(Q(:,k(i):k(i+1)));
+       %disp("P(:,i:i+1)");
+       %disp(P(:,i:i+1));
+       %disp("ang(i:i+1)");
+       %disp(ang(i:i+1));
        %disp("bdt(:,i)");
        %disp(bdt(:,i));
 end

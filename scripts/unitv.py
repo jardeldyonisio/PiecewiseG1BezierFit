@@ -4,12 +4,22 @@ from copy import deepcopy
 # TODO n ser um self.n
 
 def unitv(Q, k):
-    # print("aqui")
+    '''
+    This function calculates the unit vectors of the control points.
+
+    @param Q: Knot points.
+    @param k: Indices of the points in the polyline that will be used to calculate the tangent angles.
+
+    @return uv: The unit vectors of the control points.
+    '''
     k_aux = deepcopy(k)
     r, m = Q.shape
     n  = len(k)
     uv = np.zeros((2, n))
     t = np.zeros((1, 5))
+
+    # print("Q: ", Q)
+    # print("k: ", k)
 
     for j in range(n):
         if j == 0:

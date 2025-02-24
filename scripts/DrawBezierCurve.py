@@ -8,6 +8,12 @@ from mpl_toolkits.mplot3d.art3d import Line3D
 from cubicBezierToPolyline import cubicBezierToPolyline
 
 def drawBezierCurve(*varargin: Any) -> Any:
+    '''
+    This function draws a cubic Bezier curve defined by its control points.
+
+    @param varargin: Variable length argument list.
+    @return: The handle to the created object.
+    '''
 
     # Extract handle of axis to draw on
     if isAxisHandle(varargin[0]):

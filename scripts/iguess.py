@@ -8,6 +8,15 @@ import knots
 import matplotlib.pyplot as plt
 
 def iguess(Q):
+    '''
+    This function computes the initial guess curve parameters.
+
+    @param Q: Data points to be fitted.
+    @return IG: Initial guess curve parameters.
+    @return k: Indices of the points in the polyline that will be used to calculate
+    the tangent angles.
+    @return dpkpc: Position of the knot points passed globally.
+    '''
     r, m = Q.shape
 
     # Prompt user to input the number of knot points and the type of knot position
