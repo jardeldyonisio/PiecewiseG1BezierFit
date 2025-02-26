@@ -33,8 +33,8 @@ def iguess0(data_points, n_knots):
     '''
 
     # TODO: Automatically set the number of knots.
-    n_knots : int = 3
-    default_knots_position : bool = True
+    n_knots = 3
+    default_knots_position = True
     knots_index = None
     knots_sequence = None # [1, 4, 8, ..., n]
 
@@ -54,7 +54,7 @@ def iguess0(data_points, n_knots):
     knots_positions = knots(data_points, knots_index)  
     
     # Call to compute the distance between successive knot points.
-    dt = distEJL(knots_positions, knots_index, n_knots)  
+    dt = distEJL(knots_positions, n_knots)  
     
     # Call to compute the angles for the unit tangent vectors.
     ang = tang(data_points, knots_index)  
