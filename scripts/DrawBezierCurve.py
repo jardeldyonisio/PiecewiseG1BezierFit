@@ -4,7 +4,6 @@ import matplotlib.pyplot as plt
 from typing import Any, List, Tuple
 from isAxisHandle import isAxisHandle
 from drawPolyline import drawPolyline
-from mpl_toolkits.mplot3d.art3d import Line3D
 from cubicBezierToPolyline import cubicBezierToPolyline
 
 def drawBezierCurve(*varargin: Any) -> Any:

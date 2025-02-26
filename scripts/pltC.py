@@ -1,3 +1,5 @@
+import math
+
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -21,4 +23,4 @@ def pltC(C, Q, P):
     return plt.gcf()
 
 def berny(n, i, t):
-    return (np.math.comb(n, i) * t**i * (1-t)**(n-i))
+    return (math.comb(n, i) * t**i * (1-t)**(n-i))
