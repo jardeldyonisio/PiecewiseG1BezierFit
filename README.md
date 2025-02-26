@@ -12,7 +12,8 @@ For detailed documentation and examples, please refer to the original repository
 
 ## TODO
 
-This implementation includes three methods. The first method fits a unique Bézier curve, while the second and third methods fit a B-spline. However, there are issues with the `fmin` function in Python during the conversion process, so currently, only the first method is functional.
+- This implementation includes three methods. The first method fits a unique Bézier curve, while the second and third methods fit a B-spline. However, there are issues with the `fmin` function in Python during the conversion process, so currently, only the first method is functional;
+- Conda env.
 
 ## Related Work
 
