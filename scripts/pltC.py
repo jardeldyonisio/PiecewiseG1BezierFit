@@ -4,6 +4,14 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 def pltC(C, Q, P):
+    '''
+    This function plots the Bezier curve and the control points.
+
+    @param C: Control points of the Bezier curve.
+    @param Q: Data points to be fitted.
+    @param P: The indices of the points in the polyline that will be used to
+    calculate the tangent angles.
+    '''
     s, t = C.shape
     x = np.arange(0, 1.025, 0.025) # Defines the interval for the polynomial.
     b = len(x)

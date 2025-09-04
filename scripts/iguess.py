@@ -17,7 +17,6 @@ def iguess(Q):
     if h == 1:
         k = defk(m, n)  # Calls for default knot position.
     elif h == 2:
-        print('Input initial knot sequence as follows "[1 4 8 ... n]".')
         k = np.array(input())
     else:
         print('Error! Start over and choose "1" or "2".')
