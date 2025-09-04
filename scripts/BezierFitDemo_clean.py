@@ -10,25 +10,18 @@ from iguess0 import iguess0
 from DrawBezierCurve import drawBezierCurve
 from cubicBezierToPolyline import cubicBezierToPolyline
 
-def BezierFitDemo_final():
+def BezierFitDemo_clean():
     # Demonstrate Bezier curve fit
     demo = 1
     k = None
 
     if demo == 1:
-        # Create a more complex trajectory with 200 points for robotics testing
-        t = np.linspace(0, 4*np.pi, 200)
-        
-        # Create a spiral-like trajectory with some noise (simulating real robot data)
-        np.random.seed(42)  # For reproducible results
-        noise_x = np.random.normal(0, 0.02, 200)
-        noise_y = np.random.normal(0, 0.02, 200)
-        
-        x = t * np.cos(t) * 0.3 + noise_x
-        y = t * np.sin(t) * 0.3 + noise_y
-        
-        Q = np.column_stack([x, y])
-        n = 8  # More knot points for complex trajectory
+        C = np.array([[0, 0],
+                      [1, 2],
+                      [3, 3],
+                      [4, 2]])
+        Q = cubicBezierToPolyline(C, 65)
+        n = 3  # Starting number of knot points
         
     print(f"Demo: {demo}, n: {n}")
     print(f"Q shape: {Q.shape[0]}x{Q.shape[1]}")
@@ -50,7 +43,7 @@ def BezierFitDemo_final():
     plt.figure(figsize=(10, 8))
     poplt(GOC, Qt)
     plt.title('Python: Plot of SGO curve')
-    plt.savefig('/home/jardeldyonisio/PiecewiseG1BezierFit/python_sgo_curve.png', dpi=300, bbox_inches='tight')
+    plt.savefig('/home/jardeldyonisio/PiecewiseG1BezierFit/python_sgo_curve_clean.png', dpi=300, bbox_inches='tight')
     print("Saved Python SGO curve plot")
 
     # Get the Bézier control points of the curve fit
@@ -62,19 +55,17 @@ def BezierFitDemo_final():
     for i in range(0, len(Cnew)-2, 3):
         if i+3 < len(Cnew):
             drawBezierCurve(Cnew[i:i+4])   # Fitted cubic Bézier segment
-
-    hc = plt.plot(Cnew[:,0], Cnew[:,1], 'o-', label='New control points', linewidth=2, markersize=6)
+    
     ho = plt.plot(Q[:,0], Q[:,1], 'k.', label='Original data', markersize=3)
     hn = plt.plot(P[:,0], P[:,1], 'kx', markersize=10, markeredgewidth=3, label=f'Original guess n = {n} knots')
-
-    plt.legend()
+    hc = plt.plot(Cnew[:,0], Cnew[:,1], 'o-', label='New control points', linewidth=2, markersize=6)
+    
+    plt.legend(['Original data', f'Original guess n = {n} knots', 'New control points'])
     plt.title('Python: Detailed Bézier Curve Fit')
     plt.grid(True, alpha=0.3)
     plt.axis('equal')
-    plt.savefig('/home/jardeldyonisio/PiecewiseG1BezierFit/python_detailed_fit.png', dpi=300, bbox_inches='tight')
+    plt.savefig('/home/jardeldyonisio/PiecewiseG1BezierFit/python_detailed_fit_clean.png', dpi=300, bbox_inches='tight')
     print("Saved Python detailed fit plot")
-    
-    plt.show()
 
 if __name__ == '__main__':
-    BezierFitDemo_final()
+    BezierFitDemo_clean()
