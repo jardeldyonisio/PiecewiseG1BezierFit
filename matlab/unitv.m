@@ -9,6 +9,7 @@ function uv = unitv(Q,k)
 % by M. R. Holmes
 [r, m] = size (Q);
 n  = length(k);
+uv = zeros(2, n);  % Initialize output array
 for j = 1:n 	% Loop to index knot positions.
     if j == 1
         k(j) = 1; kt = 1;

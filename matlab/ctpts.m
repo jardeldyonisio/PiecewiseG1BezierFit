@@ -5,7 +5,7 @@ function C = ctpts(P, ang, dt)
 % points, dt; as input. It then computes the positions for the
 % control points. It was written by M. R. Holmes.
 
-n = length(P);
+n = size(P, 2);  % Number of columns (knot points)
 T = [];   % ECR
 
 for k = 2 : n-1

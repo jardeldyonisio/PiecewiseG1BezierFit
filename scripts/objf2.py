@@ -25,6 +25,10 @@ def objf2(x, Q, t, k, dpkpc):
         # Calls the function that computes the sums of the square
         # of the distances from the data points to the nearest point
         # on the cubic segment.
-        se = sod(C, Q, dpkpc) + np.dot(fp, fp) + np.dot(lp, lp)
+        sod_value = sod(C, Q, dpkpc)
+        
+        se = sod_value + np.dot(fp, fp) + np.dot(lp, lp)
         
         return se
+    
+    return 0  # Return 0 if t != 0
