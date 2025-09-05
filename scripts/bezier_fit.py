@@ -9,6 +9,7 @@ from globop import globop
 from cpoints import cpoints
 from iguess0 import iguess0
 from DrawBezierCurve import drawBezierCurve
+from cubicBezierToPolyline import cubicBezierToPolyline
 
 def getControlPoints():
     '''
@@ -207,17 +208,29 @@ def calculateSegmentDistanceError(ctrl_points, data_points):
         print(f"Error in distance calculation: {str(e)}")
         return 1.0  # Return default error
 
-def bezierFit(plot: bool = False):
+def bezierFit(plot: bool = False,
+              adaptive: bool = True
+            #   control_points: np.ndarray = None,
+            #   data_points: np.ndarray = None
+              ):
     '''
-    @brief Demonstrate Bezier curve fitting with adaptive knot placement.
+    @brief Demonstrate Bezier curve fitting.
 
     @param plot: Flag to indicate whether to plot the results.
+    @param adaptive: Flag to indicate whether to use adaptive knot placement.
+    @param control_points: Control points for the Bezier curve. Array dimensions [N, 2].
+    @param data_points: Data points to fit the Bezier curve to. Array dimensions [N, 2].
     '''
+
+    # TODO: Add control and data points inputs.
+
+    # if control_points is None and data_points is None:
+    #     raise ValueError("Either control_points or data_points must be provided.")
+
     # Demonstrate Bezier curve fit with adaptive knot placement
-    demo = 1
     k = None
 
-    if demo == 1:
+    if adaptive:
         # Create a more complex trajectory with 200 points for robotics testing
         t = np.linspace(0, 4*np.pi, 200)
         
@@ -242,6 +255,16 @@ def bezierFit(plot: bool = False):
         
         k = k_adaptive  # Use adaptively determined knots
         n = len(k)      # Number of knots determined adaptively
+    # else:
+    #     if control_points is not None:
+    #         C = np.array([[0, 0],
+    #                       [1, 2],
+    #                       [3, 3],
+    #                       [4, 2]])
+    #         Q = cubicBezierToPolyline(C, 65)
+    #         n = 3
+    #     else:
+    #         Q = data_points
         
     # Now run the final optimization with the adaptively chosen knots
     Qt = Q.T
