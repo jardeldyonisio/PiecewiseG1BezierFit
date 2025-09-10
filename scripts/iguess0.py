@@ -8,7 +8,7 @@ from ctpts import ctpts
 from knots import knots
 from distEJL import distEJL
 
-def iguess0(Q, n, k):
+def iguess0(Q, n, k, plot = False):
     r, m = Q.shape
 
     # Q = datapoints (2xm)
@@ -31,10 +31,11 @@ def iguess0(Q, n, k):
     # else:
     #     print(C)
 
-    pltC(C, Q, P)  # Call to plot the initial guess curve, its control polygon, and points in Q.
-    plt.gcf()
-    plt.title('Plot of Initial Guess curve')
-    plt.show()
+    if plot:
+        pltC(C, Q, P)  # Call to plot the initial guess curve, its control polygon, and points in Q.
+        plt.gcf()
+        plt.title('Plot of Initial Guess curve')
+        plt.show()
 
     # Assemble the composite vector of the initial guess curve parameters
     #IG = np.concatenate((P[0], P[1], ang, dt[0], dt[1]))
