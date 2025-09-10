@@ -16,9 +16,6 @@ def bezierFit():
     @brief Demonstrate Bezier curve fitting.
     '''
 
-    # if control_points is None and data_points is None:
-    #     raise ValueError("Either control_points or data_points must be provided.")
-
     # Demonstrate Bezier curve fit with adaptive knot placement
     k = None
 
