@@ -15,3 +15,7 @@ For detailed documentation and examples, please refer to the original repository
 This repository is used in a Teach and Repeat project, which focuses on autonomous navigation by teaching a robot a path and having it follow the path.
 
 You can find the project [in this repository](https://github.com/jardeldyonisio/teach_and_repeat).
+
+## TODO
+
+- [ ] All codes with doxygen documentation;
