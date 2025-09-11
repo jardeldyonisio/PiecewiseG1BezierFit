@@ -1,7 +1,7 @@
 import numpy as np
 
 from opdist import opdist
-from scipy.optimize import fmin
+from scipy.optimize import fmin, minimize
 
 def bstdst(id, Q, P, ang, k):
     options = {'disp': False, 'xatol': 0.01, 'fatol': 0.01}
@@ -21,7 +21,6 @@ def bstdst(id, Q, P, ang, k):
         ang_slice = ang[i:i+2]
         
         # Use scipy.optimize.minimize instead of deprecated fmin
-        from scipy.optimize import minimize
         result = minimize(opdist, id[:, i], args=(Q_slice, P_slice, ang_slice), 
                          method='Nelder-Mead', options={'disp': False, 'xatol': 0.01, 'fatol': 0.01})
         bdt[:, i] = result.x
