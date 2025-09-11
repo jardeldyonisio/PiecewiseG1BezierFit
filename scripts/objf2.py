@@ -1,9 +1,9 @@
 import numpy as np
-import math
-from ktangdt import ktangdt
-from ctpts import ctpts
-from newk import newk
+
 from sod import sod
+from newk import newk
+from ctpts import ctpts
+from ktangdt import ktangdt
 
 def objf2(x, Q, t, k, dpkpc):
     # Loop to change dpkpc if a knot was inserted or removed.
